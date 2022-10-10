@@ -85,3 +85,10 @@ These would be a couple of first good points to tackle.
 
 Otherwise, this was intended from the beginning as a very small learning experience and proof of concept (it was
 written in a couple of hours) and as such I'm happy with the result.
+
+## Compiling and running
+
+An Haskell + Cabal installation is required, then it's enough to run
+```console
+$ cabal run
+```
