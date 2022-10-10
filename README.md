@@ -25,8 +25,8 @@ the nature, which randomly choses a location to drop a new tile in.
 The solver works as follows: given a maximum game tree depth to explore (currently set to 3), backward induction is applied
 (without discounting) in order to find the best action to take now. Since the depth is limited, for obvious computational
 reasons, and we are not using discounting (which would instead allow for a justified truncation at a specific point), it is
-required to have a non-recursive scoring function which only looks at a specific scenario in static sense.
-In such scenario, the computation of the score is as follows:
+required to have a non-recursive scoring function which only looks at a specific state of the game in a "static" way.
+In such scenario, the computation of the score goes as follows:
 ```hs
 scoreAtZeroDepth :: Board -> Float
 scoreAtZeroDepth board =
@@ -37,7 +37,7 @@ scoreAtZeroDepth board =
     fromIntegral (sEmpty + sHighest * 4)
 ```
 i.e. by adding together the number of empty tiles and the highest exponent multiplied by a factor of 4.
-This seems to be a good-enough heuristic.
+This seems to be a good-enough heuristic, and leads the solver to the completion of the game (the tile 2048 is obtained).
 
 Otherwise, at a generic game tree depth, the `score` function computes the score the solver would obtain
 by recursively choosing the best move at each step, and computing the expectation over every possible random nature's move.
@@ -80,10 +80,10 @@ Playing a game is then just a matter of initializing a game board and iterativel
 Currently the game implementation is not perfect: only tiles of value `2` randomly drop in the game board, instead of
 a random choice between `2` and `4`.
 
-Most importantly, the solver is quite slow (since it has not been optimized at all) and not is not parallel.
-These would be a couple of first good points to tackle.
+Most importantly, the solver is quite slow (since it has not been optimized at all) and is single threaded.
+These would be a couple of first good points to tackle if I were to improve this small project.
 
-Otherwise, this was intended from the beginning as a very small learning experience and proof of concept (it was
+Otherwise, it was intended from the beginning as a very small learning experience and proof of concept (it was
 written in a couple of hours) and as such I'm happy with the result.
 
 ## Compiling and running
