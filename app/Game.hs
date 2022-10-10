@@ -1,8 +1,11 @@
 module Game (Tile, Board, Move(..), initial, set, randomDrop, move, locations, endGame, showBoard) where
 
 
+import Data.Char (toUpper)
 import Data.List (group, transpose, intercalate)
 import Data.Maybe (isJust, isNothing)
+
+import Numeric (showHex)
 
 import System.Random (RandomGen, next)
 
@@ -90,6 +93,6 @@ showBoard b =
         showRow r = intercalate " " (showTile <$> r)
 
         showTile :: Tile -> String
-        showTile (Just n) = show n
+        showTile (Just n) = toUpper <$> (showHex n "")
         showTile Nothing  = "_"
 
