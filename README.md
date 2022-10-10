@@ -4,9 +4,7 @@ This is a very simple solver for the popular puzzle game [2048](https://en.wikip
 
 It was written as a way of exercising with the Haskell language, and to experiment with game solution concepts.
 
-<p align="center">
-  <img width="600" src="https://cdn.rawgit.com/gdelazzari/2048Solver/6a7a3dbc/assets/demo.svg">
-</p>
+[![Animated demo](assets/demo.svg)](assets/demo.svg)
 
 In the terminal output, the tiles are shown as an hex encoded exponent of base 2, so for instance
 
