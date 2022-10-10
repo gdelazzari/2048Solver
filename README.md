@@ -4,7 +4,9 @@ This is a very simple solver for the popular puzzle game [2048](https://en.wikip
 
 It was written as a way of exercising with the Haskell language, and to experiment with game solution concepts.
 
-<script id="asciicast-32Ct8gafVjq8yTuD6EDaKsrQa" src="https://asciinema.org/a/32Ct8gafVjq8yTuD6EDaKsrQa.js" async data-autoplay="true" data-preload="true" data-speed=4></script>
+<p align="center">
+  <img width="600" src="https://cdn.rawgit.com/gdelazzari/2048Solver/6a7a3dbc/assets/demo.svg">
+</p>
 
 In the terminal output, the tiles are shown as an hex encoded exponent of base 2, so for instance
 
@@ -85,3 +87,10 @@ These would be a couple of first good points to tackle.
 
 Otherwise, this was intended from the beginning as a very small learning experience and proof of concept (it was
 written in a couple of hours) and as such I'm happy with the result.
+
+## Compiling and running
+
+An Haskell + Cabal installation is required, then it's enough to run
+```console
+$ cabal run
+```
